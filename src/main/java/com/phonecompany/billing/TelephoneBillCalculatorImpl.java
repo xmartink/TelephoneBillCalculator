@@ -48,7 +48,7 @@ public class TelephoneBillCalculatorImpl implements TelephoneBillCalculator {
     }
 
     @Override
-    public BigDecimal calculate(String phoneLog) throws TelephoneBillCalculatorException {
+    public BigDecimal calculate(String phoneLog) {
         Map<String, PhoneStats> calculateMap = new HashMap<>();
 
         for(String line: phoneLog.replaceAll("\r", "").split("\n")) {
@@ -169,16 +169,4 @@ public class TelephoneBillCalculatorImpl implements TelephoneBillCalculator {
         this.moreCall = moreCall;
     }
 
-    class TelephoneBillCalculatorException extends Exception {
-        public TelephoneBillCalculatorException() {
-        }
-
-        public TelephoneBillCalculatorException(String message) {
-            super(message);
-        }
-
-        public TelephoneBillCalculatorException(String message, Throwable cause) {
-            super(message, cause);
-        }
-    }
 }

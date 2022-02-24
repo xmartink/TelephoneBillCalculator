@@ -25,7 +25,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test.csv"));
         try {
             System.out.println(telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -35,7 +35,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test2.csv"));
         try {
             assertEquals(new BigDecimal("1.50"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -45,7 +45,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test3.csv"));
         try {
             assertEquals(new BigDecimal("1.50"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -55,7 +55,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test4.csv"));
         try {
             assertEquals(new BigDecimal("3.10"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -65,7 +65,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test5.csv"));
         try {
             assertEquals(new BigDecimal(1), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -75,7 +75,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test6.csv"));
         try {
             assertEquals(new BigDecimal("6.20"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -85,7 +85,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test7.csv"));
         try {
             assertEquals(new BigDecimal("2.50"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -95,7 +95,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test8.csv"));
         try {
             assertEquals(new BigDecimal("6.10"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -105,7 +105,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test9.csv"));
         try {
             assertEquals(new BigDecimal("1.50"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -115,7 +115,7 @@ class TestTelephoneBillCalculatorImpl {
         Path path = Paths.get(FilenameUtils.separatorsToSystem("testdata/test10.csv"));
         try {
             assertEquals(new BigDecimal("4.20"), telephoneBillCalculator.calculate(Files.readString(path, StandardCharsets.US_ASCII)));
-        } catch (IOException | TelephoneBillCalculatorImpl.TelephoneBillCalculatorException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
