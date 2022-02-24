@@ -122,5 +122,4 @@ class TelephoneBillCalculatorImplTest {
             e.printStackTrace();
         }
     }
-    //TODO dodelat test na spatne formatovani
 }

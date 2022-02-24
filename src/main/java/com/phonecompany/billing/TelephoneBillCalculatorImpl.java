@@ -51,22 +51,12 @@ public class TelephoneBillCalculatorImpl implements TelephoneBillCalculator {
     public BigDecimal calculate(String phoneLog) throws TelephoneBillCalculatorException {
         Map<String, PhoneStats> calculateMap = new HashMap<>();
 
-        for(String line: phoneLog.replaceAll("\r", "").split("\n")) {//TODO prevest na stream??? Zjistit, co ma byt vykonejsi
+        for(String line: phoneLog.replaceAll("\r", "").split("\n")) {
             String[] split = line.split(delimiter);
             String telephone = split[0];
-            Pattern pattern = Pattern.compile("^\\d+$");//telefonni cislo
-            Matcher matcher = pattern.matcher(telephone);
-            if(!matcher.matches()) {
-                throw new TelephoneBillCalculatorException("First param not matched.");//TODO jak na vyjimky???
-            }
-            LocalDateTime dateTime1;
-            LocalDateTime dateTime2;
-            try {
-                dateTime1 = LocalDateTime.parse(split[1], DateTimeFormatter.ofPattern(dateTimePattern));
-                dateTime2 = LocalDateTime.parse(split[2], DateTimeFormatter.ofPattern(dateTimePattern));
-            } catch (DateTimeParseException e) {
-                throw new TelephoneBillCalculatorException("First param not matched.", e);//TODO jak na vyjimky???
-            }
+            LocalDateTime dateTime1 = LocalDateTime.parse(split[1], DateTimeFormatter.ofPattern(dateTimePattern));
+            LocalDateTime dateTime2 = LocalDateTime.parse(split[2], DateTimeFormatter.ofPattern(dateTimePattern));
+
             BigDecimal sum = getSumFromLine(dateTime1, dateTime2);
             if(calculateMap.containsKey(telephone)) {
                 PhoneStats stats = calculateMap.get(telephone);
